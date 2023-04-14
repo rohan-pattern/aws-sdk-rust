@@ -67,6 +67,7 @@ impl GetSecretValueFluentBuilder {
             .make_operation(&self.handle.conf)
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+	println!("operation: {:?}", op);
         self.handle.client.call(op).await
     }
     /// <p>The ARN or name of the secret to retrieve.</p>
